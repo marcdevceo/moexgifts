@@ -35,7 +35,8 @@ export default function NavBar({
       className={clsx(
         bgColorClass[bg],
         paddingClass[padding],
-        marginClass[margin]
+        marginClass[margin],
+        "sticky top-0 z-50",
       )}
       {...rest}
     >
@@ -70,7 +71,7 @@ export default function NavBar({
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex justify-center w-full sm:w-auto gap-4 sm:gap-6">
+        <div className="hidden md:flex justify-center w-full sm:w-auto gap-4 sm:gap-6 ">
           {links.map((link) => {
             const isActive = pathname === link.href;
 
@@ -84,7 +85,7 @@ export default function NavBar({
                   fontWeightClass.medium,
                   isActive
                     ? textColorClass.primary
-                    : clsx(textColorClass.secondary, hoverClass.textPrimary)
+                    : clsx(textColorClass.accent, hoverClass.textPrimary)
                 )}
               >
                 {link.label}

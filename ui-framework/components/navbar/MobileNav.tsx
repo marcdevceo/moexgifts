@@ -40,7 +40,7 @@ export default function MobileNav({ links = [] }: MobileNavProps) {
       {open && (
         <div
           className={clsx(
-            "absolute top-16 left-0 right-0 z-50 flex flex-col items-center gap-4",
+            "absolute top-16 left-0 right-0 z-50 flex flex-col items-center gap-4 backdrop-blur-xl shadow-xl",
             paddingClass.md,
             bgColorClass.primary,
             borderColorClass.primary,
