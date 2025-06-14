@@ -28,6 +28,7 @@ export const justifyContentClass = {
   between: 'justify-between',
   around: 'justify-around',
   evenly: 'justify-evenly',
+  primary: 'justify-center sm:justify-evenly'
 };
 
 export const alignItemsClass = {
@@ -36,6 +37,7 @@ export const alignItemsClass = {
   end: 'items-end',
   stretch: 'items-stretch',
   baseline: 'items-baseline',
+  primary: 'items-center sm:items-start'
 };
 
 export const alignContentClass = {

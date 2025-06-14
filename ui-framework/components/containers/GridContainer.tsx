@@ -20,6 +20,10 @@ import {
   insetClass,
   zIndexClass,
   spaceYClass,
+  justifyContentClass,
+  alignItemsClass,
+  alignContentClass,
+  placeItemsClass,
 } from "../../theme";
 
 export default function GridContainer({
@@ -27,10 +31,17 @@ export default function GridContainer({
   // Defaults
   bg = "none",
   display = "grid",
-  gridCols = 3,
-  gridGap = "md",
+  justify = "start",
+  alignItems = "start",
+
+  gridCols = "primary",
+  gridGap = "primary",
   padding = "md",
   
+  // Grid
+  alignContent,
+  placeItems,
+
   // Layout Props
   height,
   minHeight,
@@ -119,6 +130,10 @@ export default function GridContainer({
         // Grid
         gridCols && gridColsClass[gridCols],
         gridGap && gridGapClass[gridGap],
+        placeItems && placeItemsClass[placeItems],
+        justifyContentClass[justify],
+        alignItemsClass[alignItems],
+        alignContent && alignContentClass[alignContent],
 
         // Positioning
         position && positionClass[position],

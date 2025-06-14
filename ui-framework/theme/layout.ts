@@ -10,6 +10,8 @@ export const heightClass = {
   '4xl': 'h-20',
   '5xl': 'h-24',
   '6xl': 'h-32',
+  '7xl': 'h-64',
+  '8xl': 'h-88',
   full: 'h-full',
   screen: 'h-screen',
   min: 'h-min',

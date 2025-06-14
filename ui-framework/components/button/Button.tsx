@@ -2,6 +2,7 @@ import clsx from "clsx";
 import Link from "next/link";
 import { BaseButtonProps } from "./types-button";
 import { buttonVariantClass } from "./buttonVariant";
+import { borderRadiusClass } from "@/ui-framework/theme";
 
 export default function Button({
   children,
@@ -10,6 +11,7 @@ export default function Button({
   target = "_self",
   type = "button",
   variant = "primaryresp",
+  radius = "sm",
   disabled = false,
   isLoading = false,
   loadingText = "Loading...",
@@ -22,6 +24,7 @@ export default function Button({
     {
       "opacity-50 cursor-not-allowed": disabled || isLoading,
     },
+    borderRadiusClass[radius],
     className
   );
 

@@ -13,6 +13,7 @@ export type BaseTextProps = {
   size?: keyof typeof fontSizeClass;
   weight?: keyof typeof fontWeightClass;
   font?: keyof typeof fontFamilyClass;
+  italic?: boolean,
   className?: string;
 };
 

@@ -15,17 +15,19 @@ export default function CaptionText({
   size = "caption",
   weight = "normal",
   font = "sans",
+  italic = false,
   className = "",
 }: BaseTextProps) {
   return (
     <p
       className={clsx(
-        "w-full",
+        "w-auto",
         fontSizeClass[size],
         fontWeightClass[weight],
         fontFamilyClass[font],
         textColorClass[color],
         textAlignClass[align],
+        italic && "italic",
         className
       )}
     >

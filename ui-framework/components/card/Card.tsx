@@ -1,11 +1,16 @@
 import clsx from "clsx";
 import { BaseCardProps } from "./types-cards";
-import { bgColorClass, paddingClass } from "../../theme";
+import { bgColorClass, marginClass, marginXClass, marginYClass, paddingClass, paddingXClass, paddingYClass } from "../../theme";
 
 export default function Card({
   children,
-  padding = "md",
   bg = "accent",
+  margin,
+  mx,
+  my,
+  padding,
+  px,
+  py,
   rounded = true,
   shadow = true,
   className = "",
@@ -15,10 +20,15 @@ export default function Card({
     <div
       className={clsx(
         "h-full w-full flex-col",
-        paddingClass[padding],
+        margin && marginClass[margin],
+        mx && marginXClass[mx],
+        my && marginYClass[my],
+        padding && paddingClass[padding],
+        px && paddingXClass[px],
+        py && paddingYClass[py],
         bgColorClass[bg],
-        rounded && "rounded-lg",
-        shadow && "shadow-lg",
+        rounded && "rounded-xl",
+        shadow && "shadow-xl",
         className
       )}
       {...rest}

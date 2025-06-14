@@ -1,3 +1,4 @@
+import { borderRadiusClass } from "@/ui-framework/theme";
 import { buttonVariantClass } from "./buttonVariant";
 
 export type BaseButtonProps = {
@@ -6,11 +7,9 @@ export type BaseButtonProps = {
   href?: string;
   target?: string;
   type?: "button" | "submit" | "reset";
-
-  // 🔁 Now using a single variant key
   variant?: keyof typeof buttonVariantClass;
-
-  // ⛔️ Removed size, padding, colorVariant — now part of the variant system
+  radius?: keyof typeof borderRadiusClass;
+  pill?: boolean;
   disabled?: boolean;
   isLoading?: boolean;
   loadingText?: string;

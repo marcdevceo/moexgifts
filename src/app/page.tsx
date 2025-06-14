@@ -1,12 +1,11 @@
-import {
- MainContainer,
-  Title,
-} from "@/ui-framework";
+import { MainContainer } from "@/ui-framework";
+import HomeHero from "../components/home/HomeHero";
 
-export default function Home() {
+export default async function Home() {
   return (
     <MainContainer>
-      <Title>MoEx Gifts</Title>
+      <HomeHero />
+      
     </MainContainer>
   );
 }

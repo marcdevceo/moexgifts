@@ -23,6 +23,7 @@ import {
   paddingClass,
   paddingXClass,
   paddingYClass,
+  placeItemsClass,
   positionClass,
   spaceYClass,
   widthClass,
@@ -58,6 +59,7 @@ export type BaseContainerProps = {
   // 🔲 Grid
   gridCols?: keyof typeof gridColsClass;
   gridGap?: keyof typeof gridGapClass;
+  placeItems?: keyof typeof placeItemsClass;
 
   // 📌 Positioning
   position?: keyof typeof positionClass;

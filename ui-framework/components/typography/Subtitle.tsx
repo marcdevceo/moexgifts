@@ -10,6 +10,7 @@ export default function Subtitle({
   size = "subtitle",
   weight = "semibold",
   font = "heading",
+  italic = false,
   className = "",
 }: BaseTextProps) {
   return (
@@ -21,6 +22,7 @@ export default function Subtitle({
         fontWeightClass[weight],
         textColorClass[color],
         textAlignClass[align],
+        italic && "italic",
         className
       )}
     >

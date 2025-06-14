@@ -22,6 +22,13 @@ export const buttonVariantClass = {
     hoverClass.opacity,
     shadowClass.sm
   ),
+  thin: clsx(
+    fontSizeClass.caption,
+    paddingClass.sm,
+    colorVariantClass.primary,
+    hoverClass.opacity,
+    shadowClass.sm
+  ),
   outline: clsx(
     fontSizeClass.buttonText,
     paddingClass.sm,
@@ -67,4 +74,3 @@ export const buttonVariantClass = {
     shadowClass.none
   ),
 };
-
