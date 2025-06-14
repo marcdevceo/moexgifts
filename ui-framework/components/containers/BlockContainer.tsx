@@ -79,13 +79,6 @@ export default function BlockContainer({
 
         // Layout
         display && displayClass[display],
-        // flexGrow && flexGrowClass[flexGrow],
-        // flexDirection && flexDirectionClass[flexDirection],
-        // flexWrap && flexWrapClass[flexWrap],
-        // justify && justifyContentClass[justify],
-        // alignItems && alignItemsClass[alignItems],
-        // alignContent && alignContentClass[alignContent],
-        // gap && gapClass[gap],
         spaceY && spaceYClass[spaceY],
 
         typeof height === "string"
@@ -123,10 +116,6 @@ export default function BlockContainer({
           : typeof maxWidth === "number"
           ? `max-w-[${maxWidth}px]`
           : undefined,
-
-        // Grid
-        // gridCols && gridColsClass[gridCols],
-        // gridGap && gridGapClass[gridGap],
 
         // Positioning
         position && positionClass[position],

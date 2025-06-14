@@ -23,8 +23,8 @@ export const buttonVariantClass = {
     shadowClass.sm
   ),
   thin: clsx(
-    fontSizeClass.caption,
-    paddingClass.sm,
+    fontSizeClass.xs,
+    paddingClass.xs,
     colorVariantClass.primary,
     hoverClass.opacity,
     shadowClass.sm
