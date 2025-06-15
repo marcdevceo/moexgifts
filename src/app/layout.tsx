@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { NavBar } from "@/ui-framework";
+import { NavBarCart } from "@/ui-framework";
 import { navlinks } from "../data/navlinks";
 
 const geistSans = Geist({
@@ -29,7 +29,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <NavBar title="MoEx Gifts" titleHref="/" links={navlinks} />
+          <NavBarCart title="MoEx Gifts" links={navlinks} />
         {children}
       </body>
     </html>

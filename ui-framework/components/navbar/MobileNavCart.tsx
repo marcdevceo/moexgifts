@@ -18,10 +18,16 @@ import {
   colorVariantClass,
 } from "../../theme";
 import { MobileNavProps } from "./types-nav";
+import { ShoppingCartIcon } from "@heroicons/react/24/outline";
+import { BlockContainer, FlexContainer } from "../containers";
+import { useCartStore } from "../../store/cart-store";
+import { BodyText } from "../typography";
 
 export default function MobileNav({ links = [] }: MobileNavProps) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const { items } = useCartStore();
+  const cartCount = items.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
     <div className="md:hidden">
@@ -71,6 +77,20 @@ export default function MobileNav({ links = [] }: MobileNavProps) {
               </Link>
             );
           })}
+          <FlexContainer alignItems="center">
+            <BlockContainer>
+              <Link href={"/checkout"}>
+                <ShoppingCartIcon title="Shopping Cart" className="w-6 h-6 text-black" />
+              </Link>
+            </BlockContainer>
+            <BlockContainer>
+              {cartCount > 0 && (
+                <BodyText size="sm" color="dark">
+                  {cartCount}
+                </BodyText>
+              )}
+            </BlockContainer>
+          </FlexContainer>
         </div>
       )}
     </div>

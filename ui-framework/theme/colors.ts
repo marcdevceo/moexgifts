@@ -17,7 +17,8 @@ export const bgColorClass = {
   secondary: 'bg-[#CCE0F5]',         // Muted sky blue
   accent: 'bg-[#F8FAFC]',            // Cool off-white
   neutral: 'bg-[#F1F5F9]',           // Slate-100
-  surface: 'bg-[#E2E8F0]',           // Subtle card gray-blue
+  surface: 'bg-[#E2E8F0]',
+  dark: 'bg-black',           // Subtle card gray-blue
   success: 'bg-green-100',
   warning: 'bg-yellow-100',
   danger: 'bg-red-100',

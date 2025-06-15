@@ -12,7 +12,11 @@ export default async function ProductPage(props: { params: { id: string } }) {
       expand: ["default_price"],
     });
 
-    return <ProductDetail product={product} />;
+    if (!product) return notFound();
+
+    const plainProduct = JSON.parse(JSON.stringify(product));
+
+    return <ProductDetail product={plainProduct} />;
   } catch (error) {
     console.error("Error fetching product:", error);
     return notFound();
