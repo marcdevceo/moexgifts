@@ -8,12 +8,12 @@ import {
   Title,
 } from "@/ui-framework";
 import Image from "next/image";
-import Carousel from "../carousel";
+import Carousel from "./carousel";
 
 export default async function HomeHero() {
   const products = await stripe.products.list({
     expand: ["data.default_price"],
-    limit: 4,
+    limit: 6,
   });
 
   return (
@@ -32,7 +32,7 @@ export default async function HomeHero() {
             <Caption italic>
               Discover the latest products at the best prices.
             </Caption>
-            <Button href="/products" variant="thin" radius="full">
+            <Button href="/products" variant="thin" radius="full" className="px-4">
               Browse All Products
             </Button>
           </FlexContainer>

@@ -5,6 +5,8 @@ import {
   colorVariantClass,
   hoverClass,
   shadowClass,
+  paddingXClass,
+  paddingYClass,
 } from "../../theme";
 
 export const buttonVariantClass = {
@@ -32,10 +34,27 @@ export const buttonVariantClass = {
   outline: clsx(
     fontSizeClass.buttonText,
     paddingClass.sm,
-    colorVariantClass.outline,
+    colorVariantClass.outlineLight,
     hoverClass.textPrimary,
     shadowClass.none
   ),
+  outlineMiniLight: clsx(
+    fontSizeClass.xs,
+    paddingXClass.sm,
+    paddingYClass.xs,
+    colorVariantClass.outlineLight,
+    hoverClass.textPrimary,
+    shadowClass.none
+  ),
+  outlineMiniDark: clsx(
+    fontSizeClass.xs,
+    paddingXClass.sm,
+    paddingYClass.xs,
+    colorVariantClass.outlineDark,
+    hoverClass.textPrimary,
+    shadowClass.none
+  ),
+
   ghost: clsx(
     fontSizeClass.caption,
     paddingClass.none,
@@ -62,7 +81,7 @@ export const buttonVariantClass = {
   outlineresp: clsx(
     "text-xs sm:text-sm md:text-base",
     "px-3 py-2 sm:px-5 md:px-6",
-    colorVariantClass.outline,
+    colorVariantClass.outlineLight,
     hoverClass.textPrimary,
     shadowClass.none
   ),

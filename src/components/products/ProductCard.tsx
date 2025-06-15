@@ -9,8 +9,9 @@ interface Props {
 
 export default function ProductCard({ product }: Props) {
   const price = product.default_price as Stripe.Price;
+
   return (
-    <Card className="aspect-[3/4] h-full">
+    <Card className="aspect-[3/4] h-full transition-transform duration-300 ease-in-out hover:-translate-x-1 hover:-translate-y-1 hover:shadow-xl hover:shadow-gray-500">
       {product.images && product.images[0] && (
         <BlockContainer
           height="7xl"
@@ -26,18 +27,16 @@ export default function ProductCard({ product }: Props) {
         </BlockContainer>
       )}
       <BlockContainer padding="sm">
-        <BodyText size="md" weight="bold">
+        <BodyText size="sm" weight="bold">
           {product.name}
         </BodyText>
         {/* <Caption italic>{product.description}</Caption> */}
         {price && price.unit_amount && (
-          <BodyText size="base">
-            ${(price.unit_amount / 100).toFixed(2)}
-          </BodyText>
+          <BodyText size="sm">${(price.unit_amount / 100).toFixed(2)}</BodyText>
         )}
       </BlockContainer>
       <BlockContainer px="sm">
-        <Link href="#">
+        <Link href={`/products/${product.id}`}>
           <Button variant="thin" className="w-full">
             View Details
           </Button>

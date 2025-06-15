@@ -45,7 +45,8 @@ export const colorVariantClass = {
   danger: `bg-red-100 text-red-600 hover:bg-red-200`,
   surface: `bg-[#E2E8F0] text-[#2C2C2C] hover:bg-[#CBD5E1]`,             // Soft card hover
   ghost: `bg-transparent text-[#1E3A8A] hover:bg-[#E0ECF8]`,
-  outline: `border border-current bg-transparent text-[#1E3A8A] hover:bg-[#1E3A8A] hover:text-white`,
+  outlineLight: `border border-current bg-transparent text-[#1E3A8A] hover:bg-[#1E3A8A] hover:text-white`,
+  outlineDark: `border border-current bg-black text-[#FFFFFF] hover:bg-[#1E3A8A] hover:text-white`,
 };
 
 

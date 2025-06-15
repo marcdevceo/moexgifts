@@ -5,11 +5,12 @@ import { MainContainer, Title } from "@/ui-framework";
 export default async function ProductPage() {
   const products = await stripe.products.list({
     expand: ["data.default_price"],
+    limit: 12,
   });
 
   return (
     <MainContainer>
-      <Title>All Products</Title>
+      <Title size="subtitle">All Products</Title>
       <ProductList products={products.data} />
     </MainContainer>
   );

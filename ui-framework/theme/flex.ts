@@ -12,7 +12,7 @@ export const flexDirectionClass = {
   row: 'flex-row',
   column: 'flex-col',
   wrap: 'flex-wrap',
-  primary: 'flex-col sm:flex-row sm:flex-wrap',
+  primary: 'flex-col sm:flex-row',
 };
 
 export const flexWrapClass = {
