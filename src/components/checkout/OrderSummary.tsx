@@ -7,19 +7,48 @@ import {
   Caption,
   Card,
   FlexContainer,
-  Form,
   Subtitle,
   useCartStore,
 } from "@/ui-framework";
 
 export default function OrderSummary() {
-  const { items, removeItem, addItem } = useCartStore();
+  const { items, removeItem, addItem, clearCart } = useCartStore();
   const total = items.reduce(
     (acc, item) => acc + item.price * item.quantity,
     0
   );
 
-  if (!items.length) return <BodyText>Your Cart is Empty</BodyText>;
+  const handleCheckout = async () => {
+  try {
+    const res = await fetch("/api/checkout", {
+      method: "POST",
+      body: JSON.stringify({ items }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (!res.ok) {
+      throw new Error("Checkout failed");
+    }
+
+    const data = await res.json();
+    if (data.url) {
+      window.location.href = data.url; // ✅ redirect to Stripe Checkout
+    }
+  } catch (error) {
+    console.error("Checkout error:", error);
+    alert("Something went wrong. Please try again.");
+  }
+};
+
+
+  if (!items.length)
+    return (
+      <BodyText align="center" className="w-full mt-5">
+        Your Cart is Empty
+      </BodyText>
+    );
 
   return (
     <FlexContainer flexDirection="column" alignItems="center" width={"full"}>
@@ -70,7 +99,10 @@ export default function OrderSummary() {
           </BodyText>
         </BlockContainer>
       </Card>
-      <Form bg="none" title=" " buttonTitle="Proceed to Payment" />
+      <FlexContainer justify="between" width={"full"}>
+        <Button onClick={handleCheckout}>Proceed to Payment</Button>
+        <Button onClick={() => clearCart()}>Clear Cart</Button>
+      </FlexContainer>
     </FlexContainer>
   );
 }

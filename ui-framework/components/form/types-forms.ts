@@ -7,10 +7,11 @@ import {
 import { buttonVariantClass } from "../button/buttonVariant";
 
 export type BaseInputProps = {
-  name: string;
+  id?: string,
+  name?: string;
   label?: string;
-  type: "email" | "password" | "text";
-  placeholder: string;
+  type?: React.HTMLInputTypeAttribute;
+  placeholder?: string;
   className?: string;
   required?: boolean;
   button?: {
@@ -20,9 +21,10 @@ export type BaseInputProps = {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   value?: string;
   onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
-};
+} & React.FormHTMLAttributes<HTMLInputElement>;
 
 export type BaseFormProps = {
+  children?: React.ReactNode;
   fields?: BaseInputProps[];
   title?: string;
   buttonTitle?: string;
@@ -32,5 +34,6 @@ export type BaseFormProps = {
   margin?: keyof typeof marginClass;
   shadow?: boolean,
   radius?: boolean,
+  action?: string;
   className?: string,
-};
+} & React.FormHTMLAttributes<HTMLFormElement>;

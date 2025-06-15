@@ -5,19 +5,17 @@ import {
   paddingClass,
   marginClass,
   borderRadiusClass,
-  textColorClass,
-  fontSizeClass,
-  fontWeightClass,
   shadowClass,
 } from "../../theme";
 import { Subtitle } from "../typography";
-import { FlexContainer } from "../containers";
 import { Button } from "../button";
+import Input from "./Input";
 
 export default function Form({
+  children,
   fields = [],
-  title = "Form",
-  buttonTitle = "Submit",
+  title,
+  buttonTitle,
   buttonVariant = "primary",
   bg = "accent",
   padding = "lg",
@@ -36,44 +34,21 @@ export default function Form({
         radius && borderRadiusClass.lg,
         shadow && shadowClass.md,
         "w-full",
-        className,
+        className
       )}
       {...rest}
     >
-      <Subtitle align="center">{title}</Subtitle>
+      {title && <Subtitle align="center">{title}</Subtitle>}
 
       {fields.map((field) => (
-        <FlexContainer key={field.name} flexDirection="column" padding="md">
-          <label
-            htmlFor={field.name}
-            className={clsx("sr-only", fontSizeClass.body, fontWeightClass.medium)}
-          >
-            {field.label}
-          </label>
-
-          <input
-            type={field.type}
-            id={field.name}
-            name={field.name}
-            placeholder={field.placeholder}
-            className={clsx(
-              "block w-full focus:outline-none focus:ring-2",
-              borderRadiusClass.md,
-              paddingClass.md,
-              bgColorClass.neutral,
-              textColorClass.accent,
-              shadowClass.sm,
-              "focus:border-primary focus:ring-primary"
-            )}
-            required={field.required}
-          />
-        </FlexContainer>
+        <Input key={field.name} {...field} />
       ))}
+      
+      {children && children}
 
-      <Button type="submit" variant={buttonVariant}>
+      {buttonTitle && <Button type="submit" variant={buttonVariant}>
         {buttonTitle}
-      </Button>
+      </Button>}
     </form>
   );
 }
-
