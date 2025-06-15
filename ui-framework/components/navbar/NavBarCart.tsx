@@ -14,9 +14,8 @@ import {
   fontWeightClass,
   hoverClass,
 } from "../../theme";
-import { BlockContainer, FlexContainer } from "../containers";
+import { FlexContainer } from "../containers";
 import { useCartStore } from "../../store/cart-store";
-import { BodyText } from "../typography";
 import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 import MobileNavCart from "./MobileNavCart";
 
@@ -27,7 +26,7 @@ export default function NavBarCart({
   margin = "none",
   title = "",
   logo = "",
-  titleHref = "#",
+  titleHref = "/",
   logoHref = "#",
   links = [],
   ...rest
@@ -46,14 +45,13 @@ export default function NavBarCart({
       )}
       {...rest}
     >
-      <div className="flex items-center justify-between">
+      <FlexContainer alignItems="center" justify="between">
         {/* Logo or Title */}
-        <div
+        <FlexContainer
           className={clsx(
             fontSizeClass.xl,
             fontWeightClass.bold,
-            textColorClass.primary,
-            "text-center"
+            textColorClass.primary
           )}
         >
           {logo ? (
@@ -74,10 +72,14 @@ export default function NavBarCart({
               {title}
             </Link>
           ) : null}
-        </div>
+        </FlexContainer>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex justify-center w-full sm:w-auto gap-4 sm:gap-6 ">
+        <FlexContainer
+          justify="center"
+          gap="md"
+          className="hidden md:flex"
+        >
           {links.map((link) => {
             const isActive = pathname === link.href;
 
@@ -98,31 +100,22 @@ export default function NavBarCart({
               </Link>
             );
           })}
-        </div>
+        </FlexContainer>
 
-        <FlexContainer alignItems="center" className="hidden md:flex">
-          <BlockContainer>
-            <Link href={"/checkout"}>
-              <ShoppingCartIcon
-                title="Shopping Cart"
-                className="w-6 h-6 text-black"
-              />
-            </Link>
-          </BlockContainer>
-          <BlockContainer>
+        <FlexContainer alignItems="center" className="hidden md:flex space-x-4">
+          <Link href={"/checkout"} className="relative">
+            <ShoppingCartIcon className="h-6 w-6 text-black" />
             {cartCount > 0 && (
-              <BodyText size="sm" color="dark">
-                <span className="transition-transform duration-150 ease-in-out group-hover:scale-110">
-                  {cartCount}
-                </span>
-              </BodyText>
+              <span className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center text-white bg-blue-800 rounded-full text-xs">
+                {cartCount}
+              </span>
             )}
-          </BlockContainer>
+          </Link>
         </FlexContainer>
 
         {/* Mobile Navigation */}
         <MobileNavCart links={links} />
-      </div>
+      </FlexContainer>
 
       {children}
     </nav>

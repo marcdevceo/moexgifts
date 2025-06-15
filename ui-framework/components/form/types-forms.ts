@@ -4,6 +4,7 @@ import {
   paddingClass,
   colorVariantClass,
 } from "../../theme";
+import { buttonVariantClass } from "../button/buttonVariant";
 
 export type BaseInputProps = {
   name: string;
@@ -25,7 +26,11 @@ export type BaseFormProps = {
   fields?: BaseInputProps[];
   title?: string;
   buttonTitle?: string;
+  buttonVariant?: keyof typeof buttonVariantClass;
   bg?: keyof typeof bgColorClass;
   padding?: keyof typeof paddingClass;
   margin?: keyof typeof marginClass;
+  shadow?: boolean,
+  radius?: boolean,
+  className?: string,
 };

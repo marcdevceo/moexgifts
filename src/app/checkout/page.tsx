@@ -1,9 +1,11 @@
-import {  MainContainer, Title } from "@/ui-framework";
+import OrderSummary from "@/src/components/checkout/OrderSummary";
+import { MainContainer, Title } from "@/ui-framework";
 
 export default function CheckoutPage() {
-    return (
-        <MainContainer>
-            <Title>Checkout</Title>
-        </MainContainer>
-    )
+  return (
+    <MainContainer px="primary">
+      <Title>Checkout</Title>
+      <OrderSummary />
+    </MainContainer>
+  );
 }

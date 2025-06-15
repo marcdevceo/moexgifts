@@ -18,9 +18,13 @@ export default function Form({
   fields = [],
   title = "Form",
   buttonTitle = "Submit",
+  buttonVariant = "primary",
   bg = "accent",
   padding = "lg",
   margin = "none",
+  shadow = false,
+  radius = false,
+  className,
   ...rest
 }: BaseFormProps) {
   return (
@@ -29,9 +33,10 @@ export default function Form({
         bgColorClass[bg],
         paddingClass[padding],
         marginClass[margin],
-        borderRadiusClass.lg,
-        shadowClass.md,
-        "w-full"
+        radius && borderRadiusClass.lg,
+        shadow && shadowClass.md,
+        "w-full",
+        className,
       )}
       {...rest}
     >
@@ -65,7 +70,7 @@ export default function Form({
         </FlexContainer>
       ))}
 
-      <Button type="submit" variant="secondary" className="w-full">
+      <Button type="submit" variant={buttonVariant}>
         {buttonTitle}
       </Button>
     </form>

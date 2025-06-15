@@ -19,9 +19,8 @@ import {
 } from "../../theme";
 import { MobileNavProps } from "./types-nav";
 import { ShoppingCartIcon } from "@heroicons/react/24/outline";
-import { BlockContainer, FlexContainer } from "../containers";
+import { FlexContainer } from "../containers";
 import { useCartStore } from "../../store/cart-store";
-import { BodyText } from "../typography";
 
 export default function MobileNav({ links = [] }: MobileNavProps) {
   const [open, setOpen] = useState(false);
@@ -77,20 +76,17 @@ export default function MobileNav({ links = [] }: MobileNavProps) {
               </Link>
             );
           })}
-          <FlexContainer alignItems="center">
-            <BlockContainer>
-              <Link href={"/checkout"}>
-                <ShoppingCartIcon title="Shopping Cart" className="w-6 h-6 text-black" />
-              </Link>
-            </BlockContainer>
-            <BlockContainer>
-              {cartCount > 0 && (
-                <BodyText size="sm" color="dark">
-                  {cartCount}
-                </BodyText>
-              )}
-            </BlockContainer>
-          </FlexContainer>
+
+        <FlexContainer alignItems="center" className="space-x-4">
+          <Link href={"/checkout"} className="relative">
+            <ShoppingCartIcon className="h-6 w-6 text-black" />
+            {cartCount > 0 && (
+              <span className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center text-white bg-blue-800 rounded-full text-xs">
+                {cartCount}
+              </span>
+            )}
+          </Link>
+        </FlexContainer>
         </div>
       )}
     </div>

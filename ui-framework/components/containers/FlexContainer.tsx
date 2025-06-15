@@ -27,6 +27,8 @@ import {
   zIndexClass,
   spaceYClass,
   flexWrapClass,
+  paddingXClass,
+  paddingYClass,
 } from "../../theme";
 
 export default function FlexContainer({
@@ -168,8 +170,8 @@ export default function FlexContainer({
         pb && paddingClass[pb],
         pl && paddingClass[pl],
         pr && paddingClass[pr],
-        px && paddingClass[px],
-        py && paddingClass[py],
+        px && paddingXClass[px],
+        py && paddingYClass[py],
 
         // Custom
         className
