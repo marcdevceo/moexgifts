@@ -17,7 +17,7 @@ export default async function HomeHero() {
   });
 
   return (
-    <BlockContainer width="full" padding="primary" spaceY="lg">
+    <BlockContainer width="full"px="primary" spaceY="lg">
       <Card bg="surface" py="2xl">
         <FlexContainer
           flexDirection="primary"

@@ -12,13 +12,6 @@ export default function Title({
   font = "heading",
   className = "",
 }: BaseTextProps) {
-  console.log(
-  clsx(
-    fontSizeClass[size],
-    fontWeightClass[weight],
-    fontFamilyMap[font],
-  )
-)
   return (
     <h1
       className={clsx(

@@ -6,5 +6,6 @@ export * from "./footer";
 export * from "./form";
 export * from "./modal";
 export * from "./navbar";
+export * from "./scrolling";
 export * from "./spinner";
 export * from "./typography";

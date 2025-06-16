@@ -1,12 +1,12 @@
 import { MainContainer } from "@/ui-framework";
 import HomeHero from "../components/home/HomeHero";
-import MomentHero from "../components/home/MomentHero";
+import ScrollingPromo from "../components/home/ScrollingPromo";
 
 export default async function Home() {
   return (
-    <MainContainer>
+    <MainContainer bg="america">
+      <ScrollingPromo />
       <HomeHero />
-      <MomentHero />
     </MainContainer>
   );
 }

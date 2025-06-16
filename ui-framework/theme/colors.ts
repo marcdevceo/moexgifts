@@ -22,6 +22,7 @@ export const bgColorClass = {
   success: 'bg-green-100',
   warning: 'bg-yellow-100',
   danger: 'bg-red-100',
+  america: 'bg-gradient-to-r from-red-600 via-white to-blue-600',
 };
 
 
