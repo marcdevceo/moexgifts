@@ -90,7 +90,7 @@ export type FontFamilyKey = keyof typeof fontTokens;
 
 export const fontFamilyMap: Record<FontFamilyKey, string> = {
   body: "font-inter",           // Default body text
-  heading: "font-poppins",      // Main titles
+  heading: "font-bold",      // Main titles
   subtitle: "font-rubik",       // Section or product subtitle
   seasonal: "font-playfair",    // Banners, hero areas
   fancy: "font-pacifico",       // For things like “Holiday Sale” or “Limited Edition”
