@@ -26,7 +26,7 @@ export default async function HomeHero() {
           width="full"
         >
           <FlexContainer flexDirection="column" gap="md" alignItems="primary">
-            <Title size="subtitle" align="left" className="font-">
+            <Title size="subtitle" align="left" className="">
               Welcome to MoEx Gifts
             </Title>
             <Caption italic>

@@ -1,5 +1,5 @@
 import {
-  fontFamilyClass,
+  fontFamilyMap,
   fontSizeClass,
   fontWeightClass,
   textAlignClass,
@@ -14,7 +14,7 @@ export default function CaptionText({
   color = "neutral",
   size = "caption",
   weight = "normal",
-  font = "sans",
+  font = "clean",
   italic = false,
   className = "",
 }: BaseTextProps) {
@@ -24,7 +24,7 @@ export default function CaptionText({
         "w-auto",
         fontSizeClass[size],
         fontWeightClass[weight],
-        fontFamilyClass[font],
+        fontFamilyMap[font],
         textColorClass[color],
         textAlignClass[align],
         italic && "italic",

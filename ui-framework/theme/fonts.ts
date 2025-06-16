@@ -78,7 +78,8 @@ export const pacifico = Pacifico({
 
 export const fontTokens = {
   body: "font-sans",
-  heading: "font-display",
+  heading: "font-poppins",
+  subtitle: "font-casual",
   seasonal: "font-script", 
   playful: "font-bold",
   clean: "font-casual",
@@ -88,12 +89,14 @@ export const fontTokens = {
 export type FontFamilyKey = keyof typeof fontTokens;
 
 export const fontFamilyMap: Record<FontFamilyKey, string> = {
-  body: "font-sans",
-  heading: "font-display",
-  seasonal: "font-script",
-  playful: "font-bold",
-  clean: "font-casual",
-  fancy: "font-festive", // <- this uses Pacifico
+  body: "font-inter",           // Default body text
+  heading: "font-poppins",      // Main titles
+  subtitle: "font-rubik",       // Section or product subtitle
+  seasonal: "font-playfair",    // Banners, hero areas
+  fancy: "font-pacifico",       // For things like “Holiday Sale” or “Limited Edition”
+  playful: "font-lobster",      // For fun/promo CTA like “Shop Now!”
+  clean: "font-outfit",         // Used in UI or small sections
 };
+
 
 export const fonts = { inter, poppins, outfit, rubik, workSans, playfair, merriweather, greatVibes, lobster, pacifico };

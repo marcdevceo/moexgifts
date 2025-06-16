@@ -9,7 +9,7 @@ export default function Subtitle({
   color = "secondary",
   size = "subtitle",
   weight = "semibold",
-  font = "fancy",
+  font = "subtitle",
   italic = false,
   className = "",
 }: BaseTextProps) {

@@ -1,32 +1,4 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html {
-  font-family: initial !important;
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-}
+/* Base Font Tokens */
 
 .font-inter {
   font-family: var(--font-inter), sans-serif;
@@ -82,3 +54,52 @@ body {
   font-family: var(--font-lobster), cursive;
   font-weight: 400;
 }
+
+/* Design Token Aliases */
+
+.font-body {
+  @apply font-inter;
+}
+
+.font-heading {
+  @apply font-playfair;
+}
+
+.font-casual {
+  @apply font-poppins;
+}
+
+.font-bold {
+  @apply font-lobster;
+}
+
+.font-script {
+  @apply font-greatVibes;
+}
+
+.font-festive {
+  @apply font-pacifico;
+}
+
+.font-display {
+  @apply font-playfair;
+}
+
+.font-sans {
+  @apply font-inter;
+}
+
+/* Pre-Styled Marketing Combos */
+
+.font-promo {
+  @apply font-display text-xl;
+}
+
+.font-seasonal {
+  @apply font-festive text-2xl;
+}
+
+.font-hero-cursive {
+  @apply font-script text-4xl;
+}
+

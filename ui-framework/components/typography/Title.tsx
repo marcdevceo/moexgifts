@@ -9,16 +9,23 @@ export default function Title({
   color = "primary",
   size = "title",
   weight = "bold",
-  font = "fancy",
+  font = "heading",
   className = "",
 }: BaseTextProps) {
+  console.log(
+  clsx(
+    fontSizeClass[size],
+    fontWeightClass[weight],
+    fontFamilyMap[font],
+  )
+)
   return (
     <h1
       className={clsx(
         align === "left" ? "w-auto" : "w-full",
         fontSizeClass[size],
-        fontFamilyMap[font],
         fontWeightClass[weight],
+        fontFamilyMap[font],
         textColorClass[color],
         textAlignClass[align],
         className

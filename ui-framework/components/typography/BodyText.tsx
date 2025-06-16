@@ -1,6 +1,6 @@
 import { BaseTextProps } from "./types-typography";
-import { textColorClass } from "../../theme";
-import { fontFamilyClass, fontSizeClass, fontWeightClass, textAlignClass } from "../../theme";
+import { fontFamilyMap, textColorClass } from "../../theme";
+import { fontSizeClass, fontWeightClass, textAlignClass } from "../../theme";
 import clsx from "clsx";
 
 export default function BodyText({
@@ -9,7 +9,7 @@ export default function BodyText({
   color = "neutral",
   size = "body",
   weight = "normal",
-  font = "sans",
+  font = "body",
   italic = false,
   className = "",
 }: BaseTextProps) {
@@ -19,7 +19,7 @@ export default function BodyText({
         "w-auto",
         fontSizeClass[size],
         fontWeightClass[weight],
-        fontFamilyClass[font],
+        fontFamilyMap[font],
         textColorClass[color],
         textAlignClass[align],
         italic && "italic",
