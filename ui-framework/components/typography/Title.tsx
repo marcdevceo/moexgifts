@@ -1,6 +1,6 @@
 import { BaseTextProps } from "./types-typography";
-import { textColorClass } from "../../theme";
-import { fontFamilyClass, fontSizeClass, fontWeightClass, textAlignClass } from "../../theme";
+import { fontFamilyMap, textColorClass } from "../../theme";
+import { fontSizeClass, fontWeightClass, textAlignClass } from "../../theme";
 import clsx from "clsx";
 
 export default function Title({
@@ -9,7 +9,7 @@ export default function Title({
   color = "primary",
   size = "title",
   weight = "bold",
-  font = "heading",
+  font = "fancy",
   className = "",
 }: BaseTextProps) {
   return (
@@ -17,7 +17,7 @@ export default function Title({
       className={clsx(
         align === "left" ? "w-auto" : "w-full",
         fontSizeClass[size],
-        fontFamilyClass[font],
+        fontFamilyMap[font],
         fontWeightClass[weight],
         textColorClass[color],
         textAlignClass[align],

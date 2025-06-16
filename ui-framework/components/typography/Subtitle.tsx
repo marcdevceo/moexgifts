@@ -1,6 +1,6 @@
 import { BaseTextProps } from "./types-typography";
-import { textColorClass } from "../../theme";
-import { fontFamilyClass, fontSizeClass, fontWeightClass, textAlignClass } from "../../theme";
+import { fontFamilyMap, textColorClass } from "../../theme";
+import { fontSizeClass, fontWeightClass, textAlignClass } from "../../theme";
 import clsx from "clsx";
 
 export default function Subtitle({
@@ -9,7 +9,7 @@ export default function Subtitle({
   color = "secondary",
   size = "subtitle",
   weight = "semibold",
-  font = "heading",
+  font = "fancy",
   italic = false,
   className = "",
 }: BaseTextProps) {
@@ -18,7 +18,7 @@ export default function Subtitle({
       className={clsx(
         align === "left" ? "w-auto" : "w-full",
         fontSizeClass[size],
-        fontFamilyClass[font],
+        fontFamilyMap[font],
         fontWeightClass[weight],
         textColorClass[color],
         textAlignClass[align],

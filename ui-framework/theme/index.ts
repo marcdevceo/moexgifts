@@ -3,6 +3,7 @@ export * from './border';
 export * from './colors';
 export * from './display';
 export * from './flex';
+export * from './fonts';
 export * from './grid';
 export * from './hover';
 export * from './layout';

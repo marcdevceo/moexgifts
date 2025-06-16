@@ -1,5 +1,5 @@
 import {
-  fontFamilyClass,
+  fontFamilyMap,
   fontSizeClass,
   fontWeightClass,
   textAlignClass,
@@ -12,7 +12,7 @@ export type BaseTextProps = {
   color?: keyof typeof textColorClass;
   size?: keyof typeof fontSizeClass;
   weight?: keyof typeof fontWeightClass;
-  font?: keyof typeof fontFamilyClass;
+  font?: keyof typeof fontFamilyMap;
   italic?: boolean,
   className?: string;
 };
