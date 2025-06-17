@@ -2,9 +2,8 @@ import { stripe } from "@/src/lib/stripe";
 import ProductDetail from "@/src/components/products/ProductDetail";
 import { notFound } from "next/navigation";
 
-export const dynamic = "force-dynamic"; 
 
-export default async function ProductPage(props: { params: { id: string } }) {
+export default async function ProductPage(props: { params: Promise<{ id: string }> }) {
   const { id } = await props.params; 
 
   try {
