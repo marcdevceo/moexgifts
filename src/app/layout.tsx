@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "../../ui-framework/theme/globals.css";
 import { navlinks } from "../data/navlinks";
-import { fontFamilyMap, greatVibes, lobster, merriweather, NavBarCart, outfit, pacifico, playfair, poppins, rubik } from "@/ui-framework";
+import { fontFamilyMap, Footer, greatVibes, lobster, merriweather, NavBarCart, outfit, pacifico, playfair, poppins, rubik } from "@/ui-framework";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,6 +35,10 @@ export default function RootLayout({
       >
         <NavBarCart title="MoEx Gifts" links={navlinks} />
         {children}
+        <Footer 
+          companyName="MoEx Gifts"
+          textAlign="center"
+        />
       </body>
     </html>
   );

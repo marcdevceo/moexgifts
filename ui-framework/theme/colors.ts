@@ -4,7 +4,10 @@ export const textColorClass = {
   light: 'text-[#FFFFFF]',       // Slate gray
   accent: 'text-[#1E3A8A]',          // Navy Blue – bold and trustworthy
   neutral: 'text-[#374151]',         // Neutral base
-  dark: 'text-[#111827]',            // High contrast
+  dark: 'text-[#111827]',            
+  red: 'bg-red-700',
+  blue: 'bg-blue-700',
+  white: 'bg-white',
   success: 'text-green-600',
   danger: 'text-red-600',
 };
@@ -18,7 +21,11 @@ export const bgColorClass = {
   accent: 'bg-[#F8FAFC]',            // Cool off-white
   neutral: 'bg-[#F1F5F9]',           // Slate-100
   surface: 'bg-[#E2E8F0]',
-  dark: 'bg-black',           // Subtle card gray-blue
+  dark: 'bg-black',           
+  red: 'bg-red-300',
+  redDark: 'bg-red-700',
+  blue: 'bg-blue-300',
+  white: 'bg-white',
   success: 'bg-green-100',
   warning: 'bg-yellow-100',
   danger: 'bg-red-100',

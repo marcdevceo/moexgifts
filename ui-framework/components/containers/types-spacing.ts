@@ -12,7 +12,11 @@ import {
   heightClass,
   insetClass,
   justifyContentClass,
+  marginBottomClass,
   marginClass,
+  marginLeftClass,
+  marginRightClass,
+  marginTopClass,
   marginXClass,
   marginYClass,
   maxHeightClass,
@@ -20,7 +24,11 @@ import {
   minHeightClass,
   minWidthClass,
   overflowClass,
+  paddingBottomClass,
   paddingClass,
+  paddingLeftClass,
+  paddingRightClass,
+  paddingTopClass,
   paddingXClass,
   paddingYClass,
   placeItemsClass,
@@ -73,19 +81,19 @@ export type BaseContainerProps = {
 
   // 📦 Spacing - Margin
   margin?: keyof typeof marginClass;
-  mt?: keyof typeof marginClass;
-  mb?: keyof typeof marginClass;
-  ml?: keyof typeof marginClass;
-  mr?: keyof typeof marginClass;
+  mt?: keyof typeof marginTopClass;
+  mb?: keyof typeof marginBottomClass;
+  ml?: keyof typeof marginLeftClass;
+  mr?: keyof typeof marginRightClass;
   mx?: keyof typeof marginXClass;
   my?: keyof typeof marginYClass;
 
   // 📦 Spacing - Padding
   padding?: keyof typeof paddingClass;
-  pt?: keyof typeof paddingClass;
-  pb?: keyof typeof paddingClass;
-  pl?: keyof typeof paddingClass;
-  pr?: keyof typeof paddingClass;
+  pt?: keyof typeof paddingTopClass;
+  pb?: keyof typeof paddingBottomClass;
+  pl?: keyof typeof paddingLeftClass;
+  pr?: keyof typeof paddingRightClass;
   px?: keyof typeof paddingXClass;
   py?: keyof typeof paddingYClass;
 

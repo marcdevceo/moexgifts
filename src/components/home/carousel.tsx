@@ -38,17 +38,17 @@ export default function Carousel({ products }: Props) {
         </BlockContainer>
       )}
       <FlexContainer
-        mb="md"
+        // mb="md"
         flexDirection="column"
         alignItems="center"
         justify="center"
-        className="absolute inset-0"
+        className="absolute inset-0 backdrop-blur-md"
       >
-        <BodyText weight="bold" color="light">
+        <BodyText size="xl" weight="bold" color="light">
           {currentProduct.name}
         </BodyText>
         {price && price.unit_amount && (
-          <BodyText color="light">
+          <BodyText color="light" size="xl">
             ${(price.unit_amount / 100).toFixed(2)}
           </BodyText>
         )}

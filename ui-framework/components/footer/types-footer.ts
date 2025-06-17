@@ -11,6 +11,10 @@ import {
   paddingXClass,
   marginXClass,
   marginYClass,
+  marginBottomClass,
+  marginTopClass,
+  paddingBottomClass,
+  paddingTopClass,
 } from "../../theme";
 
 export type BaseFooterProps = {
@@ -30,15 +34,15 @@ export type BaseFooterProps = {
 
   // 📦 Spacing - Padding
   padding?: keyof typeof paddingClass;
-  pt?: keyof typeof paddingClass;
-  pb?: keyof typeof paddingClass;
+  pt?: keyof typeof paddingTopClass;
+  pb?: keyof typeof paddingBottomClass;
   px?: keyof typeof paddingXClass;
   py?: keyof typeof paddingYClass;
 
   // 📦 Spacing - Margin
   margin?: keyof typeof marginClass;
-  mt?: keyof typeof marginClass;
-  mb?: keyof typeof marginClass;
+  mt?: keyof typeof marginTopClass;
+  mb?: keyof typeof marginBottomClass;
   mx?: keyof typeof marginXClass;
   my?: keyof typeof marginYClass;
 

@@ -24,6 +24,18 @@ import {
   alignItemsClass,
   alignContentClass,
   placeItemsClass,
+  marginBottomClass,
+  marginLeftClass,
+  marginRightClass,
+  marginTopClass,
+  marginXClass,
+  marginYClass,
+  paddingBottomClass,
+  paddingLeftClass,
+  paddingRightClass,
+  paddingTopClass,
+  paddingXClass,
+  paddingYClass,
 } from "../../theme";
 
 export default function GridContainer({
@@ -145,21 +157,21 @@ export default function GridContainer({
 
         // Margin
         margin && marginClass[margin],
-        mt && marginClass[mt],
-        mb && marginClass[mb],
-        ml && marginClass[ml],
-        mr && marginClass[mr],
-        mx && marginClass[mx],
-        my && marginClass[my],
+        mt && marginTopClass[mt],
+        mb && marginBottomClass[mb],
+        ml && marginLeftClass[ml],
+        mr && marginRightClass[mr],
+        mx && marginXClass[mx],
+        my && marginYClass[my],
 
         // Padding
         padding && paddingClass[padding],
-        pt && paddingClass[pt],
-        pb && paddingClass[pb],
-        pl && paddingClass[pl],
-        pr && paddingClass[pr],
-        px && paddingClass[px],
-        py && paddingClass[py],
+        pt && paddingTopClass[pt],
+        pb && paddingBottomClass[pb],
+        pl && paddingLeftClass[pl],
+        pr && paddingRightClass[pr],
+        px && paddingXClass[px],
+        py && paddingYClass[py],
 
         // Custom
         className

@@ -13,22 +13,7 @@ import {
   widthClass,
 } from "@/ui-framework/theme";
 import clsx from "clsx";
-
-type Props = {
-  message: string;
-  speed?: number; // seconds for full scroll
-  bg?: keyof typeof bgColorClass;
-  color?: keyof typeof textColorClass;
-  position?: keyof typeof positionClass;
-  overflow?: keyof typeof overflowClass;
-  width?: keyof typeof widthClass;
-  px?: keyof typeof paddingXClass;
-  py?: keyof typeof paddingYClass;
-  display?: keyof typeof displayClass
-  fontSize?: keyof typeof fontSizeClass;
-  font?: keyof typeof fontFamilyMap;
-  className?: string;
-};
+import { ScrollingProps } from "./types-scrolling";
 
 export default function MarqueeBanner({
   message,
@@ -44,7 +29,7 @@ export default function MarqueeBanner({
   fontSize = "md",
   font = "fancy",
   className = "",
-}: Props) {
+}: ScrollingProps) {
   return (
     <div
       className={clsx(

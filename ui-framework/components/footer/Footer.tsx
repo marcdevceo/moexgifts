@@ -9,17 +9,20 @@ import {
   fontWeightClass,
   fontSizeClass,
   maxWidthClass,
+  marginTopClass,
+  paddingXClass,
+  paddingYClass,
 } from "../../theme";
 
-import { BlockContainer } from "../containers";
+import { FlexContainer } from "../containers";
 import BodyText from "../typography/BodyText";
 import CaptionText from "../typography/CaptionText";
 
 export default function Footer({
   children,
-  bg = "neutral",
+  bg = "accent",
   margin,
-  mt, 
+  mt,
   padding,
   px,
   py,
@@ -27,30 +30,39 @@ export default function Footer({
   logo = "",
   textAlign = "center",
   fontWeight = "bold",
-  fontSize = "sm",
-  maxWidth = "xl",
+  fontSize = "xs",
+  maxWidth,
   ...rest
 }: BaseFooterProps) {
   return (
+
     <footer
       className={clsx(
         bgColorClass[bg],
-        mt && marginClass[mt],
+        mt && marginTopClass[mt],
         padding && paddingClass[padding],
-        px && paddingClass[px],
-        py && paddingClass[py],
+        px && paddingXClass[px],
+        py && paddingYClass[py],
+        "flex justify-center",
+        
       )}
       {...rest}
-    >
-      <BlockContainer
+      >
+      <FlexContainer
+        flexDirection="column"
+        gap="none"
+        alignItems="center"
+        padding="sm"
         className={clsx(
           "container",
-          maxWidthClass[maxWidth],
+          maxWidth && maxWidthClass[maxWidth],
           textAlignClass[textAlign],
           fontWeightClass[fontWeight]
         )}
       >
-        <BodyText className={fontSizeClass[fontSize]}>
+        <BodyText
+          className={clsx(fontSizeClass[fontSize], textAlignClass[textAlign])}
+        >
           &copy; {new Date().getFullYear()} {companyName}{" "}
           {logo ? (
             <Image
@@ -67,14 +79,13 @@ export default function Footer({
         <CaptionText
           className={clsx(
             fontSizeClass.xs,
-            margin && marginClass[margin] || "mt-2" // fallback
+            (margin && marginClass[margin]) || "mt-2"
           )}
         >
-          Built with ❤️ using Next.js and Tailwind CSS.
+          Built with ❤️ using Next.js and Custom UI-Framework/Tailwind CSS.
         </CaptionText>
-      </BlockContainer>
+      </FlexContainer>
       {children}
     </footer>
   );
 }
-

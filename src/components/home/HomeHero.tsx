@@ -27,10 +27,10 @@ export default async function HomeHero() {
         >
           <FlexContainer flexDirection="column" gap="md" alignItems="primary">
             <Title size="subtitle" align="left" weight="bold" className="">
-              Welcome to MoEx Gifts
+              Welcome to Moments Expressed
             </Title>
             <Caption italic>
-              Discover the latest products at the best prices.
+              Express your <span className="italic font-semibold">Moments</span> with a gift today!
             </Caption>
             <Button href="/products" variant="thin" radius="full" className="px-4">
               Browse All Products
