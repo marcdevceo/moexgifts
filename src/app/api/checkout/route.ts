@@ -5,6 +5,7 @@ export async function POST(req: Request) {
   try {
     const body = await req.json();
     const items: CartItem[] = body.items;
+    console.log("Cart Items:", items)
 
     const line_items = items.map((item) => ({
       price_data: {

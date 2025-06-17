@@ -29,7 +29,8 @@ export default function OrderSummary() {
     });
 
     if (!res.ok) {
-      throw new Error("Checkout failed");
+      const errorText = await res.text();
+      throw new Error(`Checkout failed: ${errorText}`);
     }
 
     const data = await res.json();
