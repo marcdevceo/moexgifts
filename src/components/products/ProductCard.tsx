@@ -14,7 +14,6 @@ export default function ProductCard({ product }: Props) {
     <Card className="aspect-[3/4] h-full transition-transform duration-300 ease-in-out hover:-translate-x-1 hover:-translate-y-1 hover:shadow-xl hover:shadow-gray-500">
       {product.images && product.images[0] && (
         <BlockContainer
-          height="7xl"
           width="full"
           className="relative aspect-square"
         >
