@@ -5,7 +5,7 @@ export const gridColsClass = {
   4: 'grid-cols-4',
   5: 'grid-cols-5',
   6: 'grid-cols-6',
-  primary: 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3',
+  primary: 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6',
 };
 
 export const gridGapClass = {
