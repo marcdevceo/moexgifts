@@ -5,7 +5,9 @@ export async function POST(req: Request) {
   try {
     const body = await req.json();
     const items: CartItem[] = body.items;
-    console.log("Cart Items:", items)
+    if (process.env.NODE_ENV !== "production") {
+      console.log("Cart Items:", items);
+    }
 
     const line_items = items.map((item) => ({
       price_data: {
@@ -28,7 +30,8 @@ export async function POST(req: Request) {
 
     return Response.json({ url: session.url });
   } catch (error) {
-    console.error("Stripe Checkout Error:", error);
+    const message = error instanceof Error ? error.message : String(error);
+    console.error("Stripe Checkout Error:", message);
     return new Response("Checkout failed", { status: 500 });
   }
 }
