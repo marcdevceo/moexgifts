@@ -17,7 +17,7 @@ interface Props {
 export default function ProductList({ products }: Props) {
   const [searchTerm, setSearchTerm] = useState<string>("");
 
-  const filteredProdcucts = products.filter((product) => {
+  const filteredProducts = products.filter((product) => {
     const term = searchTerm.toLowerCase();
     const nameMatch = product.name.toLowerCase().includes(term);
     const descriptionMatch = product.description
@@ -41,7 +41,7 @@ export default function ProductList({ products }: Props) {
         </BlockContainer>
       </FlexContainer>
       <GridContainer placeItems="center" width="full">
-        {filteredProdcucts.map((product) => (
+        {filteredProducts.map((product) => (
           <ProductCard product={product} key={product.id} />
         ))}
       </GridContainer>
